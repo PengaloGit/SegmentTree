@@ -65,8 +65,10 @@ int main(int argc, char const *argv[])
 {
     Stvector = createST(arrayInput);
     fillSt(0, 0, arrayInput.size() - 1);
-    
-    
+    for (int i = 0; i < Stvector.size(); i++){
+        cout << Stvector.at(i) << endl;
+    }    
+    cout << "===================================" << endl;
     cout << searchMinSt(1,3,0,0,lenght - 1);
     return 0;
 }
