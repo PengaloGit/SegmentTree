@@ -5,4 +5,4 @@ Implementation of segment tree structure for getting minimum.Same logic could be
 - [x] Getting the minimum
 - [ ] Updating the value
 
-MAde with love ❤
+Made with love ❤
