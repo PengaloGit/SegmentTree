@@ -4,3 +4,5 @@ Implementation of segment tree structure for getting minimum.Same logic could be
 - [x] Filling the tree
 - [x] Getting the minimum
 - [ ] Updating the value
+
+MAde with love ❤
