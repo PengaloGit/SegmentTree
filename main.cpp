@@ -65,15 +65,23 @@ int updateSt(int currentIndex,int index, int value,int startIndex, int endIndex)
     
     if(startIndex == endIndex){
         if(startIndex == index){
-        Stvector.at(index) = value;
+        Stvector.at(currentIndex) = value;
         return value;
         }
-        else return Stvector.at(endIndex);
+        else return Stvector.at(currentIndex);
     }
 
-    if(index < startIndex || index > endIndex) return Stvector.at(currentIndex);
+    else if(index < startIndex || index > endIndex) return Stvector.at(currentIndex);
 
-    
+    else{
+        int leftChildIndex = 2 * currentIndex + 1;
+        int rightChildInput = 2 * currentIndex + 2;
+        int midIndex = (-startIndex + endIndex) / 2;
+        
+        Stvector.at(currentIndex) = min(updateSt(leftChildIndex, index, value, startIndex, midIndex),
+                    updateSt(rightChildInput, index, value, midIndex + 1,endIndex));
+        return Stvector.at(currentIndex);
+    }
 
 }
 
@@ -81,10 +89,13 @@ int main(int argc, char const *argv[])
 {
     Stvector = createST(arrayInput);
     fillSt(0, 0, arrayInput.size() - 1);
+    for(auto a : Stvector) cout << a << endl;    
+    cout << "===================================" << endl;
+    cout << searchMinSt(1,3,0,0,lenght - 1)<<endl;;
+    cout << "===================================" << endl;
+    updateSt(0,0,9,0,3);
     for (int i = 0; i < Stvector.size(); i++){
         cout << Stvector.at(i) << endl;
-    }    
-    cout << "===================================" << endl;
-    cout << searchMinSt(1,3,0,0,lenght - 1);
+    }
     return 0;
 }
