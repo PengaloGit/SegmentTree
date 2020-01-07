@@ -61,6 +61,22 @@ int searchMinSt(int l, int r, int currentIndex, int startIndex, int endIndex)
     }
 }
 
+int updateSt(int currentIndex,int index, int value,int startIndex, int endIndex){
+    
+    if(startIndex == endIndex){
+        if(startIndex == index){
+        Stvector.at(index) = value;
+        return value;
+        }
+        else return Stvector.at(endIndex);
+    }
+
+    if(index < startIndex || index > endIndex) return Stvector.at(currentIndex);
+
+    
+
+}
+
 int main(int argc, char const *argv[])
 {
     Stvector = createST(arrayInput);
