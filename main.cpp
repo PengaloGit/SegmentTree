@@ -96,6 +96,12 @@ int main(int argc, char const *argv[])
     updateSt(0,0,9,0,3);
     for (int i = 0; i < Stvector.size(); i++){
         cout << Stvector.at(i) << endl;
+<<<<<<< HEAD
     }
+=======
+    }    
+    cout << "====================================" << endl;
+    cout << searchMinSt(1,3,0,0,lenght - 1);
+>>>>>>> cd2bcf5c2fa4bff1aabd4f78161f1f291d1bb2ee
     return 0;
 }
